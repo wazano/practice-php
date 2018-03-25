@@ -1,30 +1,27 @@
 <?php
+    //配列を初期化
+    $a = [ 1, 2, 3 ];
 
-    $array = array(3, 100, 43, 66, 21, 43);
-    echo $array[1] . "\n";
+    //追加
+    $a[] = 4;
 
-    $map = [
-        "Nami" => 18,
-        "Sanji" => 20,
-        "Nozawa" => 23
-    ];
+    //配列の末尾に値を追加(1)
+    array_push($a, 4);
 
-    echo $map["Nami"] . "\n";
+    //配列の先頭に値を追加(2)
+    array_unshift($a, 5);
 
-    //foreachで配列とmapを列挙すると面白い現象が見れるらしい
-    $a = [0, 1];
-    $a[5] = 5;
-    $a[4] = 4;
-    $a[2] = 2;
-    $a[3] = 3;
+    print_r($a);
 
-    for($i = 0; $i < count($a); $i++) {
-        echo $a[$i] . "\n";
-    }
+    //配列の先頭の値を削除
+    $v1 = array_shift($a);
 
-    //foreach文で配列$aの一覧を表示
-    foreach ($a as $e) {
-        echo $e . "\n";
-    }
+    echo $v1 . "\n";
 
+    //配列の最後の値を削除
+    $v2 = array_pop($a);
+
+    echo $v2 . "\n";
+
+    print_r($a);
 ?>
