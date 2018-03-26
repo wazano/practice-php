@@ -1,18 +1,16 @@
 <?php
-require_once 'Queue.php';
 
-//キューにデータを追加
-$q = new Queue();
-$q->enqueue("Panda");
-$q->enqueue("Tiger");
-$q->enqueue("Bird");
+require_once 'Stack.php';
 
-print_r($q);
+$stack = new Stack();
 
-//キューのデータを全て表示
-while ($q->length() > 0) {
-    $e = $q->dequeue();
-    echo "[$e]\n";
+$stack->push("panda");
+$stack->push("kirin");
+$stack->push("tora");
+
+while ($stack->length() > 0) {
+    $s = $stack->pop();
+    echo "[$s]\n";
 }
 
 ?>
