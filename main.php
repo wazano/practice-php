@@ -1,29 +1,18 @@
 <?php
-    //名簿リストを初期化
-    $persons = [];
+require_once 'Queue.php';
 
-    //人を名簿に追加1
-    array_push($persons, [
-        "name" => "Nami",
-        "age" => 18
-    ]);
-    
-    //人を名簿に追加2
-    array_push($persons, [
-        "name" => "Sanji",
-        "age" => 20
-    ]);
+//キューにデータを追加
+$q = new Queue();
+$q->enqueue("Panda");
+$q->enqueue("Tiger");
+$q->enqueue("Bird");
 
-    //人を名簿に追加3
-    array_push($persons, [
-        "name" => "Nozawa",
-        "age" => 23
-    ]);
+print_r($q);
 
-    print_r($persons);
+//キューのデータを全て表示
+while ($q->length() > 0) {
+    $e = $q->dequeue();
+    echo "[$e]\n";
+}
 
-    $index = mt_rand(0, count($persons) - 1);
-    
-    echo "name: " . $persons[$index]["name"] . "\n";
-    echo "age: " . $persons[$index]["age"] . "\n";
 ?>
