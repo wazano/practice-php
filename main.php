@@ -1,11 +1,29 @@
 <?php
-    $a = [1, 10, 100, 1000, 10000];
+    //名簿リストを初期化
+    $persons = [];
 
-    $callback = function($v) {
-        return $v * 2;
-    };
+    //人を名簿に追加1
+    array_push($persons, [
+        "name" => "Nami",
+        "age" => 18
+    ]);
+    
+    //人を名簿に追加2
+    array_push($persons, [
+        "name" => "Sanji",
+        "age" => 20
+    ]);
 
-    $result = array_map($callback, $a);
+    //人を名簿に追加3
+    array_push($persons, [
+        "name" => "Nozawa",
+        "age" => 23
+    ]);
 
-    print_r($result);
+    print_r($persons);
+
+    $index = mt_rand(0, count($persons) - 1);
+    
+    echo "name: " . $persons[$index]["name"] . "\n";
+    echo "age: " . $persons[$index]["age"] . "\n";
 ?>
